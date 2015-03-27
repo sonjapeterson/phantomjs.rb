@@ -30,7 +30,7 @@ console.log(arg1 + ' ' + arg2);
 Then in ruby:
 
 ```rb
-Phantomjs.run('my_runner.js', 'hello', 'world')
+Phantomjs.run('my_runner.js', ['hello', 'world'])
 #=> 'hello world'
 ```
 
@@ -48,7 +48,7 @@ js = <<JS
   phantom.exit();
 JS
 
-Phantomjs.inline(js, 'hello', 'world')
+Phantomjs.inline(js, ['hello', 'world'])
 #=> 'hello world'
 ```
 
@@ -76,6 +76,14 @@ end
 #=> ctr is: 0
     ctr is: 1
     ctr is: 2
+```
+
+## Using options
+
+You can also specify command line options (http://phantomjs.org/api/command-line.html):
+
+```rb
+Phantomjs.run('helloworld.js', ['hello', 'world'], ['--ignore-ssl-errors=true'])
 ```
 
 ## Configuring the path to phantomjs

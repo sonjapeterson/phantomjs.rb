@@ -1,4 +1,5 @@
 require 'phantomjs'
+require 'pry'
 
 RSpec.configure do |config|
   config.after(:each) do
